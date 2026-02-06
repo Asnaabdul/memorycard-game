@@ -26,7 +26,7 @@ body{
 }
 
 .wrapper{
-  padding: 25px;
+  padding: 50px;
   background: #f8f8f8;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -39,8 +39,8 @@ body{
 }
 
 .cards{
-  height: 350px;
-  width: 350px;
+  height: 600px;
+  width: 500px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -50,9 +50,10 @@ body{
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
-  height: calc(100% / 5 - 10px);
-  width: calc(100% / 2 - 10px);
+  height: calc(100% / 6 - 10px);  /* ✅ FIXED */
+  width: calc(100% / 3 - 10px);   /* 3 columns */
 }
+
 
 .card.shake{
   animation: shake 0.35s ease-in-out;
@@ -83,7 +84,7 @@ body{
   pointer-events: none;
   position: absolute;
   background: #fff;
-  border-radius: 7px;
+  border-radius: 9px;
   backface-visibility: hidden;
   transition: transform 0.25s linear;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -184,7 +185,7 @@ body{
     width: 300px;
   }
   .card .back-view img{
-    max-width: 35px;
+    max-width: 40px;
   }
   .details{
     margin-top: 10px;
@@ -202,5 +203,15 @@ body{
     border: none;
     color: #fff;
     background: #6563ff;
+  .card .back-view img{
+  width: 60px !important;
+  height: 60px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+  display: block;
   }
+
+  }
+
 }
